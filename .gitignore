@@ -1,0 +1,14 @@
+# 数据（来自课程，不随仓库分发）
+covid_train.csv
+covid_test.csv
+
+# 训练产物
+models/
+runs/
+pred.csv
+
+# 环境与缓存
+.ipynb_checkpoints/
+__pycache__/
+.idea/
+.vscode/
