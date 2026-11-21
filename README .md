@@ -90,11 +90,11 @@
 
 横轴为训练步数（每个 batch 更新一次参数为一步），纵轴为 MSE loss，已做平滑处理。
 
-| train loss | valid loss |
+|（训练损失） train loss |（验证损失） valid loss |
 |---|---|
 | ![train loss](images/loss_train.svg) | ![valid loss](images/loss_valid.svg) |
 
-两条曲线在训练前期快速下降，之后在 0.95 附近小幅波动，valid loss 没有随训练继续上升，说明模型已基本收敛，且没有明显过拟合，与 early stop 的结果一致。
+两条曲线在训练前期快速下降后趋于平稳：train loss 稳定在 0.95 左右，valid loss 稳定在 0.85 左右（best valid loss 为 0.85）。train loss 略高于 valid loss，是因为它是训练过程中逐 batch 累计的平均值，而 valid loss 是每个 epoch 结束后用最新参数计算的。valid loss 没有随训练继续上升，说明没有明显过拟合，与 early stop 的结果一致。
 
 ## 四、局限与后续改进
 
